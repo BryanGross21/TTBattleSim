@@ -122,6 +122,30 @@
 /processorParam:Quality=Best
 /build:SoundEffects/Generic/Select.ogg
 
+#begin Textures/background.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/background.png
+
+#begin Textures/Buttons.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Buttons.png
+
 #begin Textures/Buttons.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -145,6 +169,126 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/CBCrate.png
+
+#begin Textures/CBCrate.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/CBCrate.png
+
+#begin Textures/gamegui_palette_2tlla_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/gamegui_palette_2tlla_1.png
+
+#begin Textures/Info.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Info.png
+
+#begin Textures/makeatoon_palette_4alla_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/makeatoon_palette_4alla_2.png
+
+#begin Textures/makeatoon_palette_4amla_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/makeatoon_palette_4amla_1.png
+
+#begin Textures/makeatoon_palette_4amla_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/makeatoon_palette_4amla_3.png
+
+#begin Textures/particleGlow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/particleGlow.png
+
+#begin Textures/phase_3_palette_4alla_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/phase_3_palette_4alla_1.png
+
+#begin Textures/ToonInfo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/ToonInfo.png
+
+#begin Textures/tt_t_gui_mat_namePanel.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/tt_t_gui_mat_namePanel.png
 
 #begin Thumbnails/BRRRGH/Brrrgh.png
 /importer:TextureImporter
@@ -650,9 +794,183 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/TTC/TTC.png
 
-#begin TTOMusic/court.mp3
+#begin TTOMusic/BRRRGH/brrrgh_street.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:TTOMusic/court.mp3
+/build:TTOMusic/BRRRGH/brrrgh_street.mp3
+
+#begin TTOMusic/BRRRGH/brrrgh.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/BRRRGH/brrrgh.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_1.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_2.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_3.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_golf_1.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_golf_1.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_golf_2.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_golf_2.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/bbhq_golf_3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/bbhq_golf_3.mp3
+
+#begin TTOMusic/COG_HQ/BBHQ/CEO.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/BBHQ/CEO.mp3
+
+#begin TTOMusic/COG_HQ/LBHQ/cj_boss.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/LBHQ/cj_boss.mp3
+
+#begin TTOMusic/COG_HQ/LBHQ/lbhq.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/LBHQ/lbhq.mp3
+
+#begin TTOMusic/COG_HQ/SBHQCBHQ/SBHQ.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/SBHQCBHQ/SBHQ.mp3
+
+#begin TTOMusic/COG_HQ/Shared/boss_defeat.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/boss_defeat.mp3
+
+#begin TTOMusic/COG_HQ/Shared/boss_intro.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/boss_intro.mp3
+
+#begin TTOMusic/COG_HQ/Shared/Build_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/Build_Battle.mp3
+
+#begin TTOMusic/COG_HQ/Shared/coghq_battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/coghq_battle.mp3
+
+#begin TTOMusic/COG_HQ/Shared/factory.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/factory.mp3
+
+#begin TTOMusic/COG_HQ/Shared/Final_Floor.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/Shared/Final_Floor.mp3
+
+#begin TTOMusic/DD/DD_Street.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DD/DD_Street.mp3
+
+#begin TTOMusic/DD/DD.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DD/DD.mp3
+
+#begin TTOMusic/DDL/ddl_street.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DDL/ddl_street.mp3
+
+#begin TTOMusic/DDL/ddl.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DDL/ddl.mp3
+
+#begin TTOMusic/DG/DG_Street.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DG/DG_Street.mp3
+
+#begin TTOMusic/DG/DG.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DG/DG.mp3
+
+#begin TTOMusic/MML/mml_street.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/MML/mml_street.mp3
+
+#begin TTOMusic/MML/mml.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/MML/mml.mp3
+
+#begin TTOMusic/TTC/MakeAToon.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/TTC/MakeAToon.mp3
+
+#begin TTOMusic/TTC/TTC_Street.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/TTC/TTC_Street.mp3
+
+#begin TTOMusic/TTC/TTC.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/TTC/TTC.mp3
+
+#begin TTOMusic/TTC/TTO_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/TTC/TTO_Battle.mp3
 

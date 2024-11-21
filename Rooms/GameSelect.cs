@@ -56,6 +56,7 @@ namespace TTBattleSim.Rooms
 
 		Texture2D buttons;
 
+		Texture2D arrowButton;
 
 		BoundingRectangle mouse = new(0, 0, 32, 32);
 
@@ -63,16 +64,12 @@ namespace TTBattleSim.Rooms
 
 		BoundingRectangle text;
 
+		BoundingRectangle arrow;
+
 		bool colliding;
 
-		/// <summary>
-		/// Gets the current keyboard state
-		/// </summary>
-		private KeyboardState currentKeyboardState;
-		/// <summary>
-		/// Gets the previous keyboard state
-		/// </summary>
-		private KeyboardState pastKeyboardState;
+		bool collidingArrowButton;
+
 
 		private MouseState pastMousePosition;
 		private MouseState currentMousePosition;
@@ -103,6 +100,7 @@ namespace TTBattleSim.Rooms
 			TTCCBack = _content.Load<Texture2D>("MenuBackgrounds/corporateclash");
 			TTRBack = _content.Load<Texture2D>("MenuBackgrounds/ttr");
 			overlay = _content.Load<Texture2D>("MenuBackgrounds/overlay");
+			arrowButton = _content.Load<Texture2D>("Textures/makeatoon_palette_4alla_2");
 			buttons = _content.Load<Texture2D>("Textures/Buttons");
 			TTO = _content.Load<Song>("MenuMusic/ttotheme");
 			TTR = _content.Load<Song>("MenuMusic/ttrtheme");
@@ -143,6 +141,14 @@ namespace TTBattleSim.Rooms
 			text = new BoundingRectangle((ScreenManager.GraphicsDevice.Viewport.Width - 500), (ScreenManager.GraphicsDevice.Viewport.Height - 100), 118*2, 52*2);
 			Vector2 mousePosition = new Vector2(currentMousePosition.X, currentMousePosition.Y);
 
+			if (current == 0)
+			{
+				arrow = new BoundingRectangle((ScreenManager.Game.GraphicsDevice.Viewport.Width - 200), (ScreenManager.Game.GraphicsDevice.Viewport.Height - 200), 127 * 1.5f, 127 * 1.5f);
+			}
+			else
+			{
+				arrow = new BoundingRectangle(50, (ScreenManager.Game.GraphicsDevice.Viewport.Height - 200), 127 * 1.5f, 127 * 1.5f);
+			}
 
 			if (mouse.collidesWith(text))
 			{
@@ -156,7 +162,7 @@ namespace TTBattleSim.Rooms
 						foreach (var screen in ScreenManager.GetScreens())
 							screen.ExitScreen();
 
-						ScreenManager.AddScreen(new UnderConstruction(game, current), null);
+						ScreenManager.AddScreen(new TTO_LevelSelect(game, PlayGround.TTC), null);
 					}
 					else 
 					{
@@ -172,77 +178,35 @@ namespace TTBattleSim.Rooms
 				colliding = false;
 			}
 
+			if (mouse.collidesWith(arrow))
+			{
+				collidingArrowButton = true;
+				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
+				{
+					if (current == gameOptions.TTO)
+					{
+						current = gameOptions.Clash;
+					}
+					else
+					{
+						current = gameOptions.TTO;
+					}
+					option.Play();
+
+					Song selectedSong = current == gameOptions.TTO ? TTO : Clash;
+					if (MediaPlayer.Queue.ActiveSong != selectedSong)
+					{
+						MediaPlayer.Play(selectedSong);
+					}
+				}
+			}
+			else
+			{
+				collidingArrowButton = false;
+			}
+
 			mouse.X = mousePosition.X;
 			mouse.Y = mousePosition.Y;
-		}
-
-		public override void HandleInput(GameTime gameTime, InputState input)
-		{
-
-			pastKeyboardState = currentKeyboardState;
-			currentKeyboardState = Keyboard.GetState();
-
-			//Changes the current selected game
-			if (currentKeyboardState.IsKeyDown(Keys.A) && pastKeyboardState.IsKeyUp(Keys.A))
-			{
-				if (current == gameOptions.TTO)
-				{
-					current = gameOptions.Clash;
-				}
-				else 
-				{
-					current = gameOptions.TTO;
-				}
-
-
-				option.Play();
-
-				Song selectedSong = current == gameOptions.TTO ? TTO : Clash;
-				if (MediaPlayer.Queue.ActiveSong != selectedSong)
-				{
-					MediaPlayer.Play(selectedSong);
-				}
-			}
-			if (currentKeyboardState.IsKeyDown(Keys.D) && pastKeyboardState.IsKeyUp(Keys.D))
-			{
-				if (current == gameOptions.TTO)
-				{
-					current = gameOptions.Clash;
-				}
-				else
-				{
-					current = gameOptions.TTO;
-				}
-				option.Play();
-
-				Song selectedSong = current == gameOptions.TTO ? TTO : Clash;
-				if (MediaPlayer.Queue.ActiveSong != selectedSong)
-				{
-					MediaPlayer.Play(selectedSong);
-				}
-			}
-
-			if (currentKeyboardState.IsKeyDown(Keys.E)) 
-			{
-				MediaPlayer.Stop();
-				selected.Play();
-				if (current == 0)
-				{
-					
-					foreach (var screen in ScreenManager.GetScreens())
-						screen.ExitScreen();
-
-					ScreenManager.AddScreen(new UnderConstruction(game, current), null);
-				}
-				else
-				{
-					foreach (var screen in ScreenManager.GetScreens())
-						screen.ExitScreen();
-
-					ScreenManager.AddScreen(new UnderConstruction(game, current), null);
-				}
-
-			}
 		}
 
 		/// <summary>
@@ -258,6 +222,8 @@ namespace TTBattleSim.Rooms
 			graphics.Clear(Color.Black);
 
 			Rectangle buttonSource;
+			Rectangle arrowSource = new Rectangle(0, 0, 127, 127);
+			Color arrowColor = Color.White;
 			spriteBatch.Begin();
 			Vector2 destination = new Vector2((graphics.Viewport.Width - 500), (graphics.Viewport.Height - 100));
 			var destinationRectangle = new Rectangle(0, 0, graphics.Viewport.Width, graphics.Viewport.Height);
@@ -268,6 +234,11 @@ namespace TTBattleSim.Rooms
 			else 
 			{
 				buttonSource = new(263, 265, 118, 52);
+			}
+
+			if (collidingArrowButton) 
+			{
+				arrowColor = Color.SkyBlue;
 			}
 
 			if (current == 0)
@@ -283,11 +254,25 @@ namespace TTBattleSim.Rooms
 				spriteBatch.Draw(TTCCBack, Vector2.Zero, destinationRectangle, Color.White);
 			}
 
+
 			spriteBatch.Draw(overlay, Vector2.Zero, destinationRectangle, Color.White, 0f, Vector2.Zero, 1.1f, SpriteEffects.None, 0f);
 
 			spriteBatch.Draw(buttons, destination, buttonSource, Color.White, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0);
 
-			spriteBatch.DrawString(font, "PLAY", destination + new Vector2(50,0), Color.Black);
+			spriteBatch.DrawString(font, "PLAY", destination + new Vector2(50, 0), Color.Black);
+
+
+			if (current == 0)
+			{
+				destination = new Vector2((graphics.Viewport.Width - 200), (graphics.Viewport.Height - 200));
+				spriteBatch.Draw(arrowButton, destination, arrowSource, arrowColor, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0);
+			}
+			else 
+			{
+				destination = new Vector2((50), (graphics.Viewport.Height - 200));
+				spriteBatch.Draw(arrowButton, destination, arrowSource, arrowColor, 0f, Vector2.Zero, 1.5f, SpriteEffects.FlipHorizontally, 0);
+			}
+
 
 
 			destination = new Vector2((graphics.Viewport.Width - 1800) / 2, graphics.Viewport.Height - 750);

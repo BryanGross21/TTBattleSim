@@ -72,7 +72,7 @@ namespace TTBattleSim.Rooms
 
 			buttons = _content.Load<Texture2D>("Textures/Buttons");
 			SellbotHQ = _content.Load<Texture2D>("Thumbnails/COG/SellbotHQ");
-			Courtyard = _content.Load<Song>("TTOMusic/court");
+			Courtyard = _content.Load<Song>("TTOMusic/COG_HQ/SBHQCBHQ/SBHQ");
 			font = _content.Load<SpriteFont>("menuFont");
 			selected = _content.Load<SoundEffect>("SoundEffects/Generic/Select");
 			crates = new Crate[]
@@ -177,8 +177,6 @@ namespace TTBattleSim.Rooms
 				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
 				{
 					selected.Play();
-
-					Thread.Sleep(1000);
 
 					foreach (var screen in ScreenManager.GetScreens()) {
 						screen.ExitScreen();
