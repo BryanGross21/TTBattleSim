@@ -100,6 +100,8 @@ namespace TTBattleSim.Rooms
 
 		Texture2D exitButton;
 
+		Texture2D createToon;
+
 		/// <summary>
 		/// Decides what background to use
 		/// </summary>
@@ -117,9 +119,12 @@ namespace TTBattleSim.Rooms
 
 		BoundingRectangle exit;
 
+
 		BoundingRectangle leftArrow;
 
 		BoundingRectangle rightArrow;
+
+		BoundingRectangle createAToon;
 
 		bool colliding;
 
@@ -130,6 +135,8 @@ namespace TTBattleSim.Rooms
 		bool collidingBackButton;
 
 		bool collidingExitButton;
+
+		bool collidingToonButton;
 
 		bool showBackButton;
 
@@ -237,14 +244,16 @@ namespace TTBattleSim.Rooms
 			songs[22] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/bbhq_golf_3");
 			songs[23] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/CEO");
 
+			createToon = _content.Load<Texture2D>("Textures/ttcc_achievement_icons_palette_4allc_6");
 			exitButton = _content.Load<Texture2D>("Textures/phase_3_palette_4alla_1");
 			overlay = _content.Load<Texture2D>("MenuBackgrounds/overlay");
 			buttons = _content.Load<Texture2D>("Textures/Buttons");
 			arrowButton = _content.Load<Texture2D>("Textures/makeatoon_palette_4alla_2");
 			option = _content.Load<SoundEffect>("SoundEffects/Generic/Select");
 			font = _content.Load<SpriteFont>("menuFont");
+			i = GetBackground();
 			MediaPlayer.IsRepeating = true;
-			MediaPlayer.Play(songs[0]);
+			MediaPlayer.Play(GetSong());
 		}
 
 		public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
@@ -282,6 +291,8 @@ namespace TTBattleSim.Rooms
 			}
 
 			exit = new BoundingRectangle(0, 0, 125, 125);
+
+			createAToon = new BoundingRectangle((ScreenManager.GraphicsDevice.Viewport.Width - 150), 0, 128, 128);
 
 			text = new BoundingRectangle((ScreenManager.GraphicsDevice.Viewport.Width - 500), (ScreenManager.GraphicsDevice.Viewport.Height - 100), 118 * 2, 52 * 2);
 			Vector2 mousePosition = new Vector2(currentMousePosition.X, currentMousePosition.Y);
@@ -543,6 +554,25 @@ namespace TTBattleSim.Rooms
 			else
 			{
 				collidingBackButton = false;
+			}
+
+			if (mouse.collidesWith(createAToon))
+			{
+				collidingToonButton = true;
+				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
+				{
+					selectingPlayground = true;
+					foreach (var screen in ScreenManager.GetScreens())
+						screen.ExitScreen();
+
+					ScreenManager.AddScreen(new UnderConstruction(game, gameOptions.TTO), null);
+
+					option.Play();
+				}
+			}
+			else
+			{
+				collidingToonButton = false;
 			}
 
 			if (mouse.collidesWith(exit))
@@ -990,8 +1020,19 @@ namespace TTBattleSim.Rooms
 			graphics.Clear(Color.Black);
 
 			Rectangle arrowSource = new Rectangle(0, 0, 127, 127);
+			Rectangle ToonSource = new Rectangle(769, 256, 256, 256); ;
 			Color leftArrowColor;
 			Color rightArrowColor;
+			Color ToonSelectColor;
+
+			if (collidingToonButton)
+			{
+				ToonSelectColor = Color.SkyBlue;
+			}
+			else 
+			{
+				ToonSelectColor = Color.White;
+			}
 
 			if (collidingLeftArrowButton)
 			{
@@ -1082,6 +1123,8 @@ namespace TTBattleSim.Rooms
 			}
 
 			spriteBatch.Draw(exitButton, Vector2.Zero, exitButtonSource, Color.White);
+
+			spriteBatch.Draw(createToon, new Vector2(graphics.Viewport.Width - 150, 0), ToonSource, ToonSelectColor, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 
 			spriteBatch.End();
 
