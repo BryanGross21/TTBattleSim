@@ -58,22 +58,22 @@ namespace TTBattleSim
 
 
 			float screenAspectRatio = (float)GraphicsDevice.Viewport.Width / GraphicsDevice.Viewport.Height;
-			float gameAspectRatio = (float)736 / 552;
+			float gameAspectRatio = (float)1920 / 1080;
 
 			if (screenAspectRatio < gameAspectRatio)
 			{
-
-				_gameScale = (float)GraphicsDevice.Viewport.Width / 736;
-				_gameOffset.X = (GraphicsDevice.Viewport.Height - 552 * _gameScale) / 2f;
-				_gameOffset.Y = 0;
+				_gameScale = (float)GraphicsDevice.Viewport.Height / 1920;
+				_gameOffset.Y = (GraphicsDevice.Viewport.Width - 1080 * _gameScale) / 2f;
+				_gameOffset.X = 0;
 			}
 			else
 			{
 				// Letterbox vertically
-				_gameScale = (float)GraphicsDevice.Viewport.Height / 736;
-				_gameOffset.Y = (GraphicsDevice.Viewport.Width - 552 * _gameScale) / 2f;
-				_gameOffset.X = 0;
+				_gameScale = (float)GraphicsDevice.Viewport.Width / 1920;
+				_gameOffset.X = (GraphicsDevice.Viewport.Height - 1080 * _gameScale) / 2f;
+				_gameOffset.Y = 0;
 			}
+
 
 			// TODO: Add your update logic here
 

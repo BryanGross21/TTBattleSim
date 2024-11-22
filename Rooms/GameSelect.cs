@@ -31,7 +31,7 @@ namespace TTBattleSim.Rooms
 		/// </summary>
 		Game game;
 
-		string[] descriptions = { "The original game, this mode \nfocuses on preserving the\nauthentic experience of \nToontown.\n(currently only \nunder contruction)", "DUMMY", "A reimagined Toontown, with\ndifferent mechanics and\nrepresents a \ndifferent experience.\n(NOT IMPLEMENTED, \nJUST LEADS TO UNDER \nCONSTRUCTION SCREEN)" };
+		string[] descriptions = { "The original game, this mode \nfocuses on preserving the\nauthentic experience of \nToontown.\n", "DUMMY", "A reimagined Toontown, with\ndifferent mechanics and\nrepresents a \ndifferent experience.\n(NOT IMPLEMENTED, \nJUST LEADS TO UNDER \nCONSTRUCTION SCREEN)" };
 
 		/// <summary>
 		/// Menu song for TTR
