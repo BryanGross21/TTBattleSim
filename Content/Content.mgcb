@@ -314,6 +314,30 @@
 /processorParam:TextureFormat=Color
 /build:Textures/tb.png
 
+#begin Textures/Text_Box.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Text_Box.png
+
+#begin Textures/Toon_Slot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Toon_Slot.png
+
 #begin Textures/ToonInfo.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -361,6 +385,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/ttcc_achievement_icons_palette_4allc_6.png
+
+#begin Textures/ttcc_gui_toonTip_exclaim.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/ttcc_gui_toonTip_exclaim.png
 
 #begin Thumbnails/BRRRGH/Brrrgh.png
 /importer:TextureImporter

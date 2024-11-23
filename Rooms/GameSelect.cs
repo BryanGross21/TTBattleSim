@@ -60,8 +60,17 @@ namespace TTBattleSim.Rooms
 
 		Texture2D exitButton;
 
+		Texture2D instruction;
+
+		Texture2D instructionOverlay;
+
+		Texture2D textbox;
+
+		bool collidingConfirm;
 
 		bool collidingExitButton;
+
+		bool showInstructions;
 
 		BoundingRectangle mouse = new(0, 0, 32, 32);
 
@@ -72,6 +81,10 @@ namespace TTBattleSim.Rooms
 		BoundingRectangle arrow;
 
 		BoundingRectangle exit;
+
+		BoundingRectangle confirm;
+
+		BoundingRectangle instructionCard;
 
 		bool colliding;
 
@@ -114,8 +127,14 @@ namespace TTBattleSim.Rooms
 			Clash = _content.Load<Song>("MenuMusic/clashtheme");
 			option = _content.Load<SoundEffect>("SoundEffects/Generic/Next");
 			selected = _content.Load<SoundEffect>("SoundEffects/Generic/Select");
+			textbox = _content.Load<Texture2D>("Textures/Text_Box");
+			instruction = _content.Load<Texture2D>("Textures/ttcc_gui_toonTip_exclaim");
+			instructionOverlay = _content.Load<Texture2D>("Textures/Instruction_Overlay");
 			exitButton = _content.Load<Texture2D>("Textures/phase_3_palette_4alla_1");
 			font = _content.Load<SpriteFont>("menuFont");
+
+			//instructionCard = new BoundingRectangle(0, 800, 128, 128);
+
 			MediaPlayer.IsRepeating = true;
 			MediaPlayer.Play(TTO);
 		}
@@ -146,7 +165,7 @@ namespace TTBattleSim.Rooms
 				}
 			}
 
-			exit = new BoundingRectangle(0, 0, 125, 125);
+			exit = new BoundingRectangle(ScreenManager.GraphicsDevice.Viewport.Width - 150, 0, 125, 125);
 
 			text = new BoundingRectangle((ScreenManager.GraphicsDevice.Viewport.Width - 500), (ScreenManager.GraphicsDevice.Viewport.Height - 100), 118*2, 52*2);
 			Vector2 mousePosition = new Vector2(currentMousePosition.X, currentMousePosition.Y);
@@ -313,7 +332,9 @@ namespace TTBattleSim.Rooms
 			destination = new Vector2((graphics.Viewport.Width - 1800) / 2, graphics.Viewport.Height - 750);
 			spriteBatch.DrawString(font, descriptions[(int)current], destination, Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 
-			spriteBatch.Draw(exitButton, Vector2.Zero, exitButtonSource, Color.White);
+			//spriteBatch.Draw(instruction, new Vector2(0, 800), Color.White);
+
+			spriteBatch.Draw(exitButton, new Vector2(graphics.Viewport.Width - 150, 0), exitButtonSource, Color.White);
 
 			spriteBatch.End();
 

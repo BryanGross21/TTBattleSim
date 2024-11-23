@@ -57,15 +57,15 @@ namespace TTBattleSim.Entities
 
 		public ToonSpecies species = ToonSpecies.dog;
 
-		public static int maximumHP = 15;
+		public int maximumHP = 15;
 
-		public int currentHP = maximumHP;
+		public int currentHP;
 
 		public bool[] gagTracks = { false, false, false, false, true, true, false }; //Each bool represents which track has been unlocked or not, true for unlocked and false for locked.
 
 		public int[] gagLevels = { 1, 1, 1, 1, 1, 1, 1 }; //The level of the gag the toon has for a given track.
 
-		ToonColors color = ToonColors.White;
+		public ToonColors color = ToonColors.White;
 
 	}
 }
