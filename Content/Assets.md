@@ -18,6 +18,6 @@ Thumbnails
 All use screenshots from the original game
 
 TTOMusic
-court.mp3 created by the Toontown Team for the Sellbot HQ expansion, all ownership is owned by their respective owners
+all music featured in here created by the Toontown Team for Toontown Online, all ownership is owned by their respective owners
 
 menuFont.spritefont uses the Courier New font - Courier font created originally by Howard Kettler, Courier and its typeface is under the public domain and appears on the Windows OS
