@@ -177,7 +177,22 @@ namespace TTBattleSim.Rooms
 				for (int i = 0; i < 4; i++)
 				{
 					party[i] = new Toon();
-					party[i].name = "Toon";
+					if (i == 0)
+					{
+						party[i].name = "Aidan";
+					}
+					else if (i == 1)
+					{
+						party[i].name = "Floppy";
+					}
+					else if (i == 2)
+					{
+						party[i].name = "Toony Stank";
+					}
+					else 
+					{
+						party[i].name = "Korhi";
+					}
 					party[i].species = ToonSpecies.dog;
 					party[i].maximumHP = 137;
 					for (int j = 0; j < 7; j++)
