@@ -183,7 +183,7 @@ namespace TTBattleSim.Rooms
 					for (int j = 0; j < 7; j++)
 					{
 						party[i].gagTracks[j] = true;
-						party[i].gagLevels[j] = 1;
+						party[i].gagLevels[j] = 7;
 					}
 					party[i].color = ToonColors.White;
 				}

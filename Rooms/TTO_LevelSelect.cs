@@ -13,6 +13,7 @@ using TTBattleSim.StateManagement;
 using System.Threading;
 using TTBattleSim.Collisions;
 using System.Diagnostics.Eventing.Reader;
+using TTBattleSim.Entities;
 
 namespace TTBattleSim.Rooms
 {
@@ -128,6 +129,8 @@ namespace TTBattleSim.Rooms
 
 		BoundingRectangle createAToon;
 
+		bool notDone;
+
 		bool colliding;
 
 		bool collidingLeftArrowButton;
@@ -164,6 +167,8 @@ namespace TTBattleSim.Rooms
 		SpriteFont font;
 
 		int areaSelection = 1;
+
+		COG[] cogs = new COG[4];
 
 		public TTO_LevelSelect(Game game, PlayGround ground)
 		{
@@ -440,101 +445,112 @@ namespace TTBattleSim.Rooms
 				}
 			}
 
-
-			if (mouse.collidesWith(text))
-			{
-				colliding = true;
-				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
+			if(currentA != Area.TTCBuilding && currentA != Area.DDBuilding && currentA != Area.DGBuilding && currentA != Area.BRRRGHBuilding && currentA != Area.DDLBuilding && currentA != Area.SBHQFrontFactory && currentA != Area.SBHQSideFactory && currentA != Area.VP && currentA != Area.CBHQCoin && currentA != Area.CBHQDollar && currentA != Area.CBHQBullion && currentA != Area.CFO && currentA != Area.LBHQOfficeA && currentA != Area.LBHQOfficeB && currentA != Area.LBHQOfficeC && currentA != Area.LBHQOfficeD && currentA != Area.CJ && currentA != Area.BBHQFront && currentA != Area.BBHQMiddle && currentA != Area.BBHQBack && currentA != Area.CEO) {
+				notDone = false;
+				if (mouse.collidesWith(text))
 				{
-					if (selectingPlayground)
+					colliding = true;
+					if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
 					{
-						selectingPlayground = false;
-						showBackButton = true;
-					}
-					else if (selectingPlayground == false)
-					{
-						selectingPlayground = true;
-						foreach (var screen in ScreenManager.GetScreens())
-							screen.ExitScreen();
-
-						ScreenManager.AddScreen(new UnderConstruction(game, gameOptions.TTO), null);
-					}
-
-
-					option.Play();
-
-					if (selectingPlayground == false)
-					{
-						if (current == PlayGround.TTC || current == PlayGround.DD || current == PlayGround.DG || current == PlayGround.MML || current == PlayGround.BRRRGH || current == PlayGround.BBHQ)
+						if (selectingPlayground)
 						{
-							amountOfAreas = 4;
-							if (current == PlayGround.TTC)
-							{
-								currentA = Area.Loopy;
-							}
-							else if (current == PlayGround.DD)
-							{
-								currentA = Area.Barnacle;
-							}
-							else if (current == PlayGround.DG)
-							{
-								currentA = Area.Elm;
-							}
-							else if (current == PlayGround.MML)
-							{
-								currentA = Area.Alto;
-							}
-							else if (current == PlayGround.BRRRGH)
-							{
-								currentA = Area.Walrus;
-							}
-							else if (current == PlayGround.BBHQ)
-							{
-								currentA = Area.BBHQFront;
-							}
-							i = GetBackground();
-							MediaPlayer.Play(GetSong());
-							MediaPlayer.IsRepeating = true;
+							selectingPlayground = false;
+							showBackButton = true;
 						}
-						else if (current == PlayGround.SBHQ || current == PlayGround.CBHQ)
+						else if (selectingPlayground == false)
 						{
-							amountOfAreas = 5;
-							if (current == PlayGround.SBHQ)
+							selectingPlayground = true;
+							foreach (var screen in ScreenManager.GetScreens())
+								screen.ExitScreen();
+
+							CogController controller = new(current, currentA);
+							for (int i = 0; i < cogs.Length; i++) 
 							{
-								currentA = Area.SBHQCourt;
+								cogs[i] = controller.GenerateCog();
+							}
+							ScreenManager.AddScreen(new UnderConstruction(game, gameOptions.TTO), null);
+						}
+
+
+						option.Play();
+
+						if (selectingPlayground == false)
+						{
+							if (current == PlayGround.TTC || current == PlayGround.DD || current == PlayGround.DG || current == PlayGround.MML || current == PlayGround.BRRRGH || current == PlayGround.BBHQ)
+							{
+								amountOfAreas = 4;
+								if (current == PlayGround.TTC)
+								{
+									currentA = Area.Loopy;
+								}
+								else if (current == PlayGround.DD)
+								{
+									currentA = Area.Barnacle;
+								}
+								else if (current == PlayGround.DG)
+								{
+									currentA = Area.Elm;
+								}
+								else if (current == PlayGround.MML)
+								{
+									currentA = Area.Alto;
+								}
+								else if (current == PlayGround.BRRRGH)
+								{
+									currentA = Area.Walrus;
+								}
+								else if (current == PlayGround.BBHQ)
+								{
+									currentA = Area.BBHQFront;
+								}
+								i = GetBackground();
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (current == PlayGround.SBHQ || current == PlayGround.CBHQ)
+							{
+								amountOfAreas = 5;
+								if (current == PlayGround.SBHQ)
+								{
+									currentA = Area.SBHQCourt;
+								}
+								else
+								{
+									currentA = Area.CBHQTrainyard;
+								}
+								i = GetBackground();
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (current == PlayGround.DDL)
+							{
+								amountOfAreas = 3;
+								currentA = Area.Lullaby;
+								i = GetBackground();
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
 							}
 							else
 							{
-								currentA = Area.CBHQTrainyard;
+								amountOfAreas = 6;
+								currentA = Area.LBHQCourtyard;
+								i = GetBackground();
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
 							}
-							i = GetBackground();
-							MediaPlayer.Play(GetSong());
-							MediaPlayer.IsRepeating = true;
-						}
-						else if (current == PlayGround.DDL)
-						{
-							amountOfAreas = 3;
-							currentA = Area.Lullaby;
-							i = GetBackground();
-							MediaPlayer.Play(GetSong());
-							MediaPlayer.IsRepeating = true;
-						}
-						else
-						{
-							amountOfAreas = 6;
-							currentA = Area.LBHQCourtyard;
-							i = GetBackground();
-							MediaPlayer.Play(GetSong());
-							MediaPlayer.IsRepeating = true;
-						}
 
+						}
 					}
+				}
+				else 
+				{
+					colliding = false;
 				}
 
 			}
 			else
 			{
-				colliding = false;
+				notDone = true;
 			}
 
 			if (mouse.collidesWith(back))
@@ -545,7 +561,7 @@ namespace TTBattleSim.Rooms
 					showBackButton = false;
 					selectingPlayground = true;
 					areaSelection = 1;
-
+					currentA = Area.Loopy;
 					option.Play();
 
 					i = GetBackground();
@@ -1087,7 +1103,16 @@ namespace TTBattleSim.Rooms
 				spriteBatch.DrawString(font, "Back", destination - new Vector2(200, 0), Color.Black);
 			}
 
-			spriteBatch.Draw(buttons, destination, buttonSource, Color.White, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0);
+			Color color = new Color();
+			if (notDone)
+			{
+				color = Color.Gray;
+			}
+			else 
+			{
+				color = Color.White;
+			}
+			spriteBatch.Draw(buttons, destination, buttonSource, color, 0f, Vector2.Zero, 2f, SpriteEffects.None, 0);
 
 			spriteBatch.DrawString(font, "Select", destination + new Vector2(10, 0), Color.Black);
 

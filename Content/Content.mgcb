@@ -110,6 +110,30 @@
 /processorParam:Quality=Best
 /build:MenuMusic/ttrtheme.mp3
 
+#begin SoundEffects/CogSounds/COG_VO_grunt.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/CogSounds/COG_VO_grunt.wav
+
+#begin SoundEffects/CogSounds/COG_VO_murmur.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/CogSounds/COG_VO_murmur.wav
+
+#begin SoundEffects/CogSounds/COG_VO_question_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/CogSounds/COG_VO_question_2.wav
+
+#begin SoundEffects/CogSounds/COG_VO_question_3.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SoundEffects/CogSounds/COG_VO_question_3.wav
+
 #begin SoundEffects/Generic/Next.ogg
 /importer:OggImporter
 /processor:SoundEffectProcessor
