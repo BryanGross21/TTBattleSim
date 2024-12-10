@@ -182,6 +182,18 @@
 /processorParam:TextureFormat=Color
 /build:Textures/CBCrate.png
 
+#begin Textures/cog.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/cog.png
+
 #begin Textures/dd.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -218,6 +230,42 @@
 /processorParam:TextureFormat=Color
 /build:Textures/dg.png
 
+#begin Textures/gag_selection_panels_palette_4allc_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/gag_selection_panels_palette_4allc_1.png
+
+#begin Textures/gag_selection_panels_palette_4allc_3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/gag_selection_panels_palette_4allc_3.png
+
+#begin Textures/gag_selection_panels_palette_4allc_4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/gag_selection_panels_palette_4allc_4.png
+
 #begin Textures/gamegui_palette_2tlla_1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -253,6 +301,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/Instruction_Overlay.png
+
+#begin Textures/lured.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/lured.jpg
 
 #begin Textures/makeatoon_palette_4alla_2.png
 /importer:TextureImporter
@@ -350,6 +410,18 @@
 /processorParam:TextureFormat=Color
 /build:Textures/Text_Box.png
 
+#begin Textures/textbox.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=0,0,0,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/textbox.png
+
 #begin Textures/Toon_Slot.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -373,6 +445,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Textures/ToonInfo.png
+
+#begin Textures/trapped.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/trapped.jpg
 
 #begin Textures/tt_t_gui_mat_namePanel.png
 /importer:TextureImporter
@@ -458,6 +542,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/BRRRGH/Polar.png
 
+#begin Thumbnails/BRRRGH/PolarBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/BRRRGH/PolarBlurred.png
+
 #begin Thumbnails/BRRRGH/Sleet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -470,6 +566,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/BRRRGH/Sleet.png
 
+#begin Thumbnails/BRRRGH/SleetBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/BRRRGH/SleetBlurred.png
+
 #begin Thumbnails/BRRRGH/Walrus.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -481,6 +589,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/BRRRGH/Walrus.png
+
+#begin Thumbnails/BRRRGH/WalrusBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/BRRRGH/WalrusBlurred.png
 
 #begin Thumbnails/COG/BossbotHQ.png
 /importer:TextureImporter
@@ -650,6 +770,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DD/Anchor.png
 
+#begin Thumbnails/DD/BarnacleBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DD/BarnacleBlurred.png
+
 #begin Thumbnails/DD/CogBuildingDD.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -686,6 +818,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DD/Lighthouse.png
 
+#begin Thumbnails/DD/LighthouseBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DD/LighthouseBlurred.png
+
 #begin Thumbnails/DD/Seaweed.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -697,6 +841,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DD/Seaweed.png
+
+#begin Thumbnails/DD/SeaweedBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DD/SeaweedBlurred.png
 
 #begin Thumbnails/DDL/CogBuildingDDL.png
 /importer:TextureImporter
@@ -734,6 +890,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DDL/Lullaby.png
 
+#begin Thumbnails/DDL/LullabyBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DDL/LullabyBlurred.png
+
 #begin Thumbnails/DDL/Pajama_Place.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -745,6 +913,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DDL/Pajama_Place.png
+
+#begin Thumbnails/DDL/PajamaBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DDL/PajamaBlurred.png
 
 #begin Thumbnails/DG/CogBuildingDG.png
 /importer:TextureImporter
@@ -782,6 +962,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DG/Elm.png
 
+#begin Thumbnails/DG/ElmBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DG/ElmBlurred.png
+
 #begin Thumbnails/DG/Maple.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -793,6 +985,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DG/Maple.png
+
+#begin Thumbnails/DG/MapleBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DG/MapleBlurred.png
 
 #begin Thumbnails/DG/Oak.png
 /importer:TextureImporter
@@ -806,6 +1010,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/DG/Oak.png
 
+#begin Thumbnails/DG/OakBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/DG/OakBlurred.png
+
 #begin Thumbnails/MML/Alto.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -818,6 +1034,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/MML/Alto.png
 
+#begin Thumbnails/MML/AltoBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/MML/AltoBlurred.png
+
 #begin Thumbnails/MML/Baritone.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -829,6 +1057,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/MML/Baritone.png
+
+#begin Thumbnails/MML/BaritoneBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/MML/BaritoneBlurred.png
 
 #begin Thumbnails/MML/CogBuildingMML.png
 /importer:TextureImporter
@@ -866,6 +1106,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/MML/Tenor.png
 
+#begin Thumbnails/MML/TenorBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/MML/TenorBlurred.png
+
 #begin Thumbnails/TTC/CogBuildingTTC.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -890,6 +1142,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/TTC/Loopy.png
 
+#begin Thumbnails/TTC/LoopyBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/TTC/LoopyBlurred.png
+
 #begin Thumbnails/TTC/Punchline.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -902,6 +1166,18 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/TTC/Punchline.png
 
+#begin Thumbnails/TTC/PunchlineBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/TTC/PunchlineBlurred.png
+
 #begin Thumbnails/TTC/Silly.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -913,6 +1189,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Thumbnails/TTC/Silly.png
+
+#begin Thumbnails/TTC/SillyBlurred.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Thumbnails/TTC/SillyBlurred.png
 
 #begin Thumbnails/TTC/TTC.png
 /importer:TextureImporter
