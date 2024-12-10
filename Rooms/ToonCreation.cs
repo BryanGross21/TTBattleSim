@@ -86,7 +86,9 @@ namespace TTBattleSim.Rooms
 		bool[] slotSelected = { true, false, false, false };
 
 
-		bool[] speciesSelected = { true, false, false, false, false, false, false, false, false };
+		bool[] speciesSelected = { false, false, false, false, false, false, false, false, false };
+
+		bool[] colorSelected = new bool[27];
 
 		BoundingRectangle mouse = new(0, 0, 32, 32);
 
@@ -180,28 +182,35 @@ namespace TTBattleSim.Rooms
 					if (i == 0)
 					{
 						party[i].name = "Aidan";
+						party[i].species = ToonSpecies.mouse;
+						party[i].color = ToonColors.Blue;
 					}
 					else if (i == 1)
 					{
 						party[i].name = "Floppy";
+						party[i].species = ToonSpecies.dog;
+						party[i].color = ToonColors.Aqua;
 					}
 					else if (i == 2)
 					{
 						party[i].name = "Toony Stank";
+						party[i].species = ToonSpecies.bear;
+						party[i].color = ToonColors.Seagreen;
 					}
 					else 
 					{
 						party[i].name = "Korhi";
+						party[i].species = ToonSpecies.cat;
+						party[i].color = ToonColors.Orange;
 					}
-					party[i].species = ToonSpecies.dog;
 					party[i].maximumHP = 137;
 					for (int j = 0; j < 7; j++)
 					{
 						party[i].gagTracks[j] = true;
 						party[i].gagLevels[j] = 7;
 					}
-					party[i].color = ToonColors.White;
 				}
+
 			}
 
 			for (int k = 0; k < 4; k++) { 
@@ -352,18 +361,6 @@ namespace TTBattleSim.Rooms
 
 			if (currentScreen == screens.slots)
 			{
-				for (int j = 0; j < 9; j++)
-				{
-					if (j == 0)
-					{
-						speciesSelected[j] = true;
-					}
-					else
-					{
-						speciesSelected[j] = false;
-					}
-				}
-
 				for (int i = 0; i < 4; i++)
 				{
 					if (mouse.collidesWith(slots[i]) && slotSelected[i] == false)
@@ -386,6 +383,30 @@ namespace TTBattleSim.Rooms
 						}
 					}
 				}
+
+				for (int i = 0; i < speciesSelected.Length; i++)
+				{
+					if (i == (int)currentToon.species)
+					{
+						speciesSelected[i] = true;
+					}
+					else 
+					{
+						speciesSelected[i] = false;
+					}
+				}
+
+				for (int i = 0; i < colorSelected.Length; i++)
+				{
+					if (i == (int)currentToon.color)
+					{
+						colorSelected[i] = true;
+					}
+					else
+					{
+						colorSelected[i] = false;
+					}
+				}
 			}
 			else if (currentScreen == screens.species) 
 			{
@@ -398,7 +419,7 @@ namespace TTBattleSim.Rooms
 							currentToon.species = (ToonSpecies)i;
 							for (int j = 0; j < 9; j++)
 							{
-								if (j == i)
+								if (j == (int)currentToon.species)
 								{
 									speciesSelected[j] = true;
 								}
@@ -417,11 +438,22 @@ namespace TTBattleSim.Rooms
 			{
 				for (int i = 0; i < 27; i++)
 				{
-					if (mouse.collidesWith(colors[i]))
+					if (mouse.collidesWith(colors[i]) && colorSelected[i] == false)
 					{
 						if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
 						{
 							currentToon.color = (ToonColors)i;
+							for (int j = 0; j < colorSelected.Length; j++) 
+							{
+								if (j == i)
+								{
+									colorSelected[j] = true;
+								}
+								else 
+								{
+									colorSelected[j] = false;
+								}
+							}
 							selected.Play();
 						}
 
