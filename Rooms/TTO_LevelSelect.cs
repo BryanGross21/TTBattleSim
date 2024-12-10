@@ -91,7 +91,7 @@ namespace TTBattleSim.Rooms
 		"Lawbot Courtyard (Spawn%):\nSellbot: 0%\nCashbot: 0%\nLawbot: 100%\nBossbot: 0%", "Office A fight through\n3 floors of cog battles\nto the Clerk.", "Office B fight through\n4 floors of cog battles\nto the Clerk.", "Office C fight through\n5 floors of cog battles\nto the Clerk.", "Office D fight through\n6 floors of cog battles\nto the Clerk.", "Disrupt the court and\ntake on the blind to\njustice CJ. This fight \nincludes 1 long cog battle.",
 		"The Front 3, a dreadful\ngolf course with 6 battles.", "The Middle 6, a malignant\ngolf course with 12 battles.", "The Back 9, a terrible\ngolf course with 18 battles.", "Take on and disrupt the CEOs\nbanquet. This fight includes \n2 battles."};
 
-		Song[] songs = new Song[24];
+		Song[] songs = new Song[25];
 
 		Texture2D[] backgrounds = new Texture2D[42];
 
@@ -250,6 +250,7 @@ namespace TTBattleSim.Rooms
 			songs[21] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/bbhq_golf_2");
 			songs[22] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/bbhq_golf_3");
 			songs[23] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/CEO");
+			songs[24] = _content.Load<Song>("TTOMusic/COG_HQ/SBHQCBHQ/CBHQ");
 
 			createToon = _content.Load<Texture2D>("Textures/ttcc_achievement_icons_palette_4allc_6");
 			exitButton = _content.Load<Texture2D>("Textures/phase_3_palette_4alla_1");
@@ -646,6 +647,10 @@ namespace TTBattleSim.Rooms
 				}
 				else if (current == PlayGround.SBHQ || current == PlayGround.CBHQ)
 				{
+					if (current == PlayGround.CBHQ) 
+					{
+						return songs[24];
+					}
 					return songs[13];
 				}
 				else if (current == PlayGround.LBHQ)
@@ -753,7 +758,7 @@ namespace TTBattleSim.Rooms
 				{
 					if (currentA == Area.CBHQTrainyard || currentA == Area.CFO)
 					{
-						return songs[13];
+						return songs[24];
 					}
 					else
 					{

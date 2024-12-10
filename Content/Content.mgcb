@@ -1214,6 +1214,12 @@
 /processorParam:TextureFormat=Color
 /build:Thumbnails/TTC/TTC.png
 
+#begin TTOMusic/BRRRGH/BRRRGH_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/BRRRGH/BRRRGH_Battle.mp3
+
 #begin TTOMusic/BRRRGH/brrrgh_street.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -1274,11 +1280,47 @@
 /processorParam:Quality=Best
 /build:TTOMusic/COG_HQ/LBHQ/cj_boss.mp3
 
+#begin TTOMusic/COG_HQ/LBHQ/LBHQ_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/LBHQ/LBHQ_Battle.mp3
+
 #begin TTOMusic/COG_HQ/LBHQ/lbhq.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:TTOMusic/COG_HQ/LBHQ/lbhq.mp3
+
+#begin TTOMusic/COG_HQ/LBHQ/lbhq.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/LBHQ/lbhq.mp3
+
+#begin TTOMusic/COG_HQ/SBHQCBHQ/CBHQ_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/SBHQCBHQ/CBHQ_Battle.mp3
+
+#begin TTOMusic/COG_HQ/SBHQCBHQ/CBHQ.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/SBHQCBHQ/CBHQ.mp3
+
+#begin TTOMusic/COG_HQ/SBHQCBHQ/SBHQ_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/SBHQCBHQ/SBHQ_Battle.mp3
+
+#begin TTOMusic/COG_HQ/SBHQCBHQ/SBHQ.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/COG_HQ/SBHQCBHQ/SBHQ.mp3
 
 #begin TTOMusic/COG_HQ/SBHQCBHQ/SBHQ.mp3
 /importer:Mp3Importer
@@ -1322,6 +1364,12 @@
 /processorParam:Quality=Best
 /build:TTOMusic/COG_HQ/Shared/Final_Floor.mp3
 
+#begin TTOMusic/DD/DD_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DD/DD_Battle.mp3
+
 #begin TTOMusic/DD/DD_Street.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -1333,6 +1381,18 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:TTOMusic/DD/DD.mp3
+
+#begin TTOMusic/DDL/DDL_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DDL/DDL_Battle.mp3
+
+#begin TTOMusic/DDL/DDL_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DDL/DDL_Battle.mp3
 
 #begin TTOMusic/DDL/ddl_street.mp3
 /importer:Mp3Importer
@@ -1346,6 +1406,12 @@
 /processorParam:Quality=Best
 /build:TTOMusic/DDL/ddl.mp3
 
+#begin TTOMusic/DG/DG_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/DG/DG_Battle.mp3
+
 #begin TTOMusic/DG/DG_Street.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
@@ -1357,6 +1423,12 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:TTOMusic/DG/DG.mp3
+
+#begin TTOMusic/MML/MML_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/MML/MML_Battle.mp3
 
 #begin TTOMusic/MML/mml_street.mp3
 /importer:Mp3Importer
@@ -1375,6 +1447,12 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:TTOMusic/TTC/MakeAToon.mp3
+
+#begin TTOMusic/TTC/TTC_Battle.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:TTOMusic/TTC/TTC_Battle.mp3
 
 #begin TTOMusic/TTC/TTC_Street.mp3
 /importer:Mp3Importer
