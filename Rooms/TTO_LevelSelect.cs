@@ -85,13 +85,13 @@ namespace TTBattleSim.Rooms
 		/// </summary>
 		Game game;
 
-		string[] playgroundDescriptions = { "Low level fun to be\nhad in the heart of Toontown.\nCOGS range from\nlevels 1 to\n4 here.", "Riskier encounters in\nthe foggy docks of\nToontown. COGS range\nfrom levels 2 to 6.", "Frolic and fight through \nToontown's gardens. COGS \nrange from levels\n2 to 6.", "Listen to the fabulous beats\nof Toontown's own Melodyland.\nCOGS range from\nlevels 2 to 6.", "BRRRGH, IT'S CHILLY I\nNEED A JACKET, BRRRGH. COGS \nRANGE FROM LEVELS\n5 to 9.", "ZZZZZZZZZ Sleepy ZZZZZZZZ.\nCOGS ZZZZ range from \nZZZZ levels 6 to 9.", "The smog filled factories\nof the dastardly Sellbots.\nDon't fall for these guys\nbad sales pitches. COGS \nrange from levels 4 to 6.", "The skyscrapers and trains\nof the ever present Cashbots.\nDo you feel like these guys\nare compensating for\nsomething? COGS range\nfrom levels 7 to 9.", "Judicious and justice are \nthe Lawbots and that goes\nfor their HQ. I would\nnot get these guys to\nrepresent you in court.\nCOGS range from levels\n 7 to 10.", "Vacant and empty, how odd \nfor the Bossbots? COGS don't \nroam here, where could they\nbe?" };
+		string[] playgroundDescriptions = { "Low level fun to be\nhad in the heart of Toontown.\nCOGS range from\nlevels 1 to\n4 here.", "Riskier encounters in\nthe foggy docks of\nToontown. COGS range\nfrom levels 2 to 6.", "Frolic and fight through \nToontown's gardens. COGS \nrange from levels\n2 to 6.", "Listen to the fabulous beats\nof Toontown's own Melodyland.\nCOGS range from\nlevels 2 to 6.", "BRRRGH, IT'S CHILLY I\nNEED A JACKET, BRRRGH. COGS \nRANGE FROM LEVELS\n5 to 9.", "ZZZZZZZZZ Sleepy ZZZZZZZZ.\nCOGS ZZZZ range from \nZZZZ levels 6 to 9.", "The smog filled factories\nof the dastardly Sellbots.\nDon't fall for these guys\nbad sales pitches. COGS \nrange from levels 4 to 8.", "The skyscrapers and trains\nof the ever present Cashbots.\nDo you feel like these guys\nare compensating for\nsomething? COGS range\nfrom levels 5 to 9.", "Judicious and justice are \nthe Lawbots and that goes\nfor their HQ. I would\nnot get these guys to\nrepresent you in court.\nCOGS range from levels\n 5 to 10.", "Vacant and empty, how odd \nfor the Bossbots? COGS don't \nroam here, where could they\nbe?" };
 
 		string[] areaDescriptions = { "Loopy Lane (Spawn%):\nSellbot: 10%\nCashbot: 10%\nLawbot: 70%\nBossbot: 10%", "Punchline Place (Spawn%):\nSellbot: 40%\nCashbot: 40%\nLawbot: 10%\nBossbot: 10%", "Silly Street (Spawn%):\nSellbot: 25%\nCashbot: 25%\nLawbot: 25%\nBossbot: 25%", "Fight a random\n1 to 3 story building.", "Barnacle Boulevard (Spawn%):\nSellbot: 0%\nCashbot: 0%\nLawbot: 10%\nBossbot: 90%", "Lighthouse Lane (Spawn%):\nSellbot: 10%\nCashbot: 10%\nLawbot: 40%\nBossbot: 40%", "Seaweed Street (Spawn%):\nSellbot: 10%\nCashbot: 90%\nLawbot: 0%\nBossbot: 0%", "Take on a random\n2 to 4 story building." , "Elm Street (Spawn%):\nSellbot: 70%\nCashbot: 10%\nLawbot: 20%\nBossbot: 0%", "Maple Street (Spawn%):\nSellbot: 20%\nCashbot: 0%\nLawbot: 70%\nBossbot: 10%", "Oak Street (Spawn%):\nSellbot: 85%\nCashbot: 5%\nLawbot: 5%\nBossbot: 5%", "Take on a random \n3 to to 4 story building.", "Alto Avenue (Spawn%):\nSellbot: 50%\nCashbot: 50%\nLawbot: 0%\nBossbot: 0%", "Baritone Boulevard (Spawn%):\nSellbot: 0%\nCashbot: 90%\nLawbot: 0%\nBossbot: 10%", "Tenor Terrace (Spawn%):\nSellbot: 0%\nCashbot: 0%\nLawbot: 50%\nBossbot: 50%", "Take on a random \n3 to 4 story building", "Walrus Way (Spawn%):\nSellbot: 0%\nCashbot: 0%\nLawbot: 10%\nBossbot: 90%", "Sleet Street (Spawn%):\nSellbot: 40%\nCashbot: 30%\nLawbot: 20%\nBossbot: 10%", "Polar Place (Spawn%):\nSellbot: 5%\nCashbot: 5%\nLawbot: 85%\nBossbot: 5%", "Take on a random\n3 to 5 story building.", "Lullaby Lane (Spawn%):\nSellbot: 25%\nCashbot: 25%\nLawbot: 25%\nBossbot: 25%", "Pajama Place (Spawn%):\nSellbot: 5%\nCashbot: 85%\nLawbot: 5%\nBossbot: 5%", "Take on a random\n 4 to 5 story building.", "Sellbot Courtyard (Spawn%):\nSellbot: 100%\nCashbot: 0%\nLawbot: 0%\nBossbot: 0%", "Factory Exterior (Spawn%):\nSellbot: 100%\nCashbot: 0%\nLawbot: 0%\nBossbot: 0%", "Fight your way through\nthe Sellbot Factory. This\none starts from\nthe front enterance.", "Fight your way through\nthe Sellbot Factory. This\none starts from\nthe side enterance.", "Take on 2 waves of cogs in\norder to fight the VP.", "Cashbot Trainyard (Spawn%):\nSellbot: 0%\nCashbot: 100%\nLawbot: 0%\nBossbot: 0%", "Coin mint: the shortest of \nthe mints. Fight your\nway through a random\namount of battles to\nthe supervisor.", "Dollar mint: the middle\nchild of the mints. Fight your\nway through a random\namount of battles to\nthe supervisor.", "Bullion mint: the longest of \nthe mints. Fight your\nway through a random\namount of battles to\nthe supervisor.", "Raid the CFO's personal \nvault and fight him \nwith a long wave of\nCOGS!",
 		"Lawbot Courtyard (Spawn%):\nSellbot: 0%\nCashbot: 0%\nLawbot: 100%\nBossbot: 0%", "Office A fight through\n3 floors of cog battles\nto the Clerk.", "Office B fight through\n4 floors of cog battles\nto the Clerk.", "Office C fight through\n5 floors of cog battles\nto the Clerk.", "Office D fight through\n6 floors of cog battles\nto the Clerk.", "Disrupt the court and\ntake on the blind to\njustice CJ. This fight \nincludes 1 long cog battle.",
 		"The Front 3, a dreadful\ngolf course with 6 battles.", "The Middle 6, a malignant\ngolf course with 12 battles.", "The Back 9, a terrible\ngolf course with 18 battles.", "Take on and disrupt the CEOs\nbanquet. This fight includes \n2 battles."};
 
-		Song[] songs = new Song[25];
+		Song[] songs = new Song[27];
 
 		Texture2D[] backgrounds = new Texture2D[42];
 
@@ -130,6 +130,10 @@ namespace TTBattleSim.Rooms
 		BoundingRectangle createAToon;
 
 		bool notDone;
+
+		bool finalTrack;
+
+		bool firstTrack;
 
 		bool colliding;
 
@@ -251,6 +255,8 @@ namespace TTBattleSim.Rooms
 			songs[22] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/bbhq_golf_3");
 			songs[23] = _content.Load<Song>("TTOMusic/COG_HQ/BBHQ/CEO");
 			songs[24] = _content.Load<Song>("TTOMusic/COG_HQ/SBHQCBHQ/CBHQ");
+			songs[25] = _content.Load<Song>("TTOMusic/COG_HQ/LBHQ/LBHQ_Office");
+			songs[26] = _content.Load<Song>("TTOMusic/COG_HQ/SBHQCBHQ/CBHQ_Mints");
 
 			createToon = _content.Load<Texture2D>("Textures/ttcc_achievement_icons_palette_4allc_6");
 			exitButton = _content.Load<Texture2D>("Textures/phase_3_palette_4alla_1");
@@ -420,8 +426,60 @@ namespace TTBattleSim.Rooms
 						option.Play();
 
 						i = GetBackground();
-						MediaPlayer.Play(GetSong());
-						MediaPlayer.IsRepeating = true;
+						if (areaSelection == amountOfAreas - 1)
+						{
+							finalTrack = true;
+							MediaPlayer.Play(GetSong());
+							MediaPlayer.IsRepeating = true;
+						}
+						else if (current == PlayGround.SBHQ)
+						{
+							if (areaSelection == 2)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == 4)
+							{
+								finalTrack = true;
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else if (current == PlayGround.CBHQ)
+						{
+							if (areaSelection == 1)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == 4)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else if (current == PlayGround.LBHQ)
+						{
+							if (areaSelection == 1)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == 5)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else 
+						{
+							if (areaSelection == 3) 
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
 					}
 				}
 				else if (mouse.collidesWith(rightArrow))
@@ -435,8 +493,62 @@ namespace TTBattleSim.Rooms
 						option.Play();
 
 						i = GetBackground();
-						MediaPlayer.Play(GetSong());
-						MediaPlayer.IsRepeating = true;
+						if (current < PlayGround.SBHQ)
+						{
+							if (areaSelection == amountOfAreas)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else if (current == PlayGround.SBHQ)
+						{
+							if (areaSelection == 3)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == amountOfAreas)
+							{
+
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else if (current == PlayGround.CBHQ)
+						{
+							if (areaSelection == 2)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == amountOfAreas)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else if (current == PlayGround.LBHQ)
+						{
+							if (areaSelection == 2)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+							else if (areaSelection == amountOfAreas)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
+						else 
+						{
+							if (areaSelection == amountOfAreas)
+							{
+								MediaPlayer.Play(GetSong());
+								MediaPlayer.IsRepeating = true;
+							}
+						}
 					}
 				}
 				else
@@ -469,7 +581,7 @@ namespace TTBattleSim.Rooms
 							{
 								cogs[i] = controller.GenerateCog();
 							}
-							ScreenManager.AddScreen(new UnderConstruction(game, gameOptions.TTO), null);
+							ScreenManager.AddScreen(new CogTauntScreen(game, current, currentA, cogs), null);
 						}
 
 
@@ -557,6 +669,8 @@ namespace TTBattleSim.Rooms
 			if (mouse.collidesWith(back))
 			{
 				collidingBackButton = true;
+				firstTrack = false;
+				finalTrack = false;
 				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
 				{
 					showBackButton = false;
@@ -762,7 +876,7 @@ namespace TTBattleSim.Rooms
 					}
 					else
 					{
-						return songs[14];
+						return songs[26];
 					}
 				}
 				else if (current == PlayGround.LBHQ)
@@ -773,7 +887,7 @@ namespace TTBattleSim.Rooms
 					}
 					else if (currentA == Area.LBHQOfficeA || currentA == Area.LBHQOfficeB || currentA == Area.LBHQOfficeC || currentA == Area.LBHQOfficeD) 
 					{
-						return songs[14];
+						return songs[25];
 					}
 					else
 					{

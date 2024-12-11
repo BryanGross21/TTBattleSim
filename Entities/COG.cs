@@ -23,7 +23,11 @@ namespace TTBattleSim.Entities
 			Taunt = taunt.taunts[tauntValue];
 		}
 
+		public bool isTrapped;
 
+		public bool isLured;
+
+		public int trapDamage;
 
 		private CogDepartments _setDepo; //Sets the cogs current department (0 for bossbot, 1 for lawbot, 2 for cashbot, 3 for sellbot)
 		public CogDepartments Depo { get { return _setDepo; } init { _setDepo = value; } }

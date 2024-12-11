@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TTBattleSim.Rooms;
 
 namespace TTBattleSim.Entities
 {
@@ -67,5 +69,8 @@ namespace TTBattleSim.Entities
 
 		public ToonColors color = ToonColors.White;
 
+		public bool[] hittingCog = { false, false , false, false};
+
+		public gagTypes gag;
 	}
 }

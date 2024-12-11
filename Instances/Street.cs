@@ -86,7 +86,6 @@ namespace TTBattleSim.Instances
 					{
 						minLevel = 5;
 						maxLevel = 8;
-						minTier = 8;
 						maxTier = 8;
 					}
 				}
