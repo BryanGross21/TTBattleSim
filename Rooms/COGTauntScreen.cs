@@ -52,6 +52,9 @@ namespace TTBattleSim.Rooms
 		private MouseState pastMousePosition;
 		private MouseState currentMousePosition;
 
+		private KeyboardState past;
+		private KeyboardState currentK;
+
 		ContentManager _content;
 
 		Area currentA = Area.Loopy;
@@ -152,6 +155,9 @@ namespace TTBattleSim.Rooms
 
 			pastMousePosition = currentMousePosition;
 			currentMousePosition = Mouse.GetState();
+			past = currentK;
+			currentK = Keyboard.GetState();
+
 
 			if (!ScreenManager.Game.IsActive)
 			{
@@ -170,7 +176,7 @@ namespace TTBattleSim.Rooms
 					MediaPlayer.Resume();
 				}
 			}
-			text = new BoundingRectangle(game.GraphicsDevice.Viewport.Width / 4, game.GraphicsDevice.Viewport.Height / 4, 513 * 2, 234 * 2);
+			//text = new BoundingRectangle(game.GraphicsDevice.Viewport.Width / 4, game.GraphicsDevice.Viewport.Height / 4, 513 * 2, 234 * 2);
 			Vector2 mousePosition = new Vector2(currentMousePosition.X, currentMousePosition.Y);
 
 			if (mouse.collidesWith(text))
@@ -191,6 +197,18 @@ namespace TTBattleSim.Rooms
 			{
 				colliding = false;
 			}
+
+			if (currentK.IsKeyDown(Keys.Right))
+			{
+				foreach (var screen in ScreenManager.GetScreens())
+					screen.ExitScreen();
+
+				option.Play();
+
+				ScreenManager.AddScreen(new BattleScreen_TTO(game, (int)current, i, currentA, cogs), null);
+			}
+
+
 			mouse.X = mousePosition.X;
 			mouse.Y = mousePosition.Y;
 		}
@@ -354,7 +372,7 @@ namespace TTBattleSim.Rooms
 
 			spriteBatch.DrawString(font, cogs[0].Taunt, new Vector2((graphics.Viewport.Width + 225) / 4, (graphics.Viewport.Height + 500) / 4), textColor, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 
-			spriteBatch.DrawString(font, "Click Textbox to Continue!", new Vector2(50, graphics.Viewport.Height - 100), Color.Black);
+			spriteBatch.DrawString(font, "Press the right arrow to continue!", new Vector2(50, graphics.Viewport.Height - 100), Color.Black);
 
 			spriteBatch.End();
 

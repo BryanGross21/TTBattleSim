@@ -60,6 +60,8 @@ namespace TTBattleSim.Rooms
 
 		int currentCog;
 
+		bool isDrawn = false;
+
 		string[] gags = { "Trap", "Lure", "Sound", "Throw", "Squirt", "Drop" };
 
 		string[] levels = { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6" };
@@ -164,6 +166,7 @@ namespace TTBattleSim.Rooms
 
 		int i = 0;
 
+		int currentToon = 0;
 
 		public BattleScreen_TTO(Game game, int songToPlay, int background, Area area, COG[] cogs)
 		{
@@ -305,6 +308,7 @@ namespace TTBattleSim.Rooms
 
 			if (trackSelecting)
 			{
+				int currentTrack = 0;
 				for (int i = 0; i < 6; i++)
 				{
 					if (i < 3)
@@ -321,6 +325,7 @@ namespace TTBattleSim.Rooms
 				{
 					if (mouse.collidesWith(trackSelection[i]))
 					{
+						currentTrack = i;
 						whichDescription[i] = true;
 						for (int j = 0; j < 6; j++)
 						{
@@ -332,10 +337,16 @@ namespace TTBattleSim.Rooms
 						if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
 						{
 							option.Play();
-							party[0].gag = (gagTypes)i;
-							if (party[0].gag == gagTypes.pass)
+							party[currentToon].gag = (gagTypes)currentTrack;
+							if (party[currentToon].gag == gagTypes.pass)
 							{
 								trackSelecting = true;
+								currentToon++;
+								if (currentToon == 4) 
+								{
+									currentToon = 0;
+									attackCogs();
+								}
 							}
 							else
 							{
@@ -374,18 +385,20 @@ namespace TTBattleSim.Rooms
 						{
 							option.Play();
 							levelSelecting = false;
-							if (party[0].gag == gagTypes.lure && (currentLevel + 1) % 2 == 0)
+							if (party[currentToon].gag == gagTypes.lure && (currentLevel + 1) % 2 == 0 || party[currentToon].gag == gagTypes.sound)
 							{
-								attackCogs();
-								trackSelecting = true;
-							}
-							else if (party[0].gag == gagTypes.sound) 
-							{
-								attackCogs();
+								party[currentToon].levelGag = currentLevel + 1;
+								currentToon++;
+								if (currentToon == 4) 
+								{
+									currentToon = 0;
+									attackCogs();
+								}
 								trackSelecting = true;
 							}
 							else
 							{
+								party[currentToon].levelGag = currentLevel + 1;
 								cogSelecting = true;
 							}
 						}
@@ -414,15 +427,15 @@ namespace TTBattleSim.Rooms
 				{
 					if (mouse.collidesWith(cogSelection[i]))
 					{
-						if (!cogs[i].isTrapped && party[0].gag == gagTypes.trap)
+						if (!cogs[i].isTrapped && party[currentToon].gag == gagTypes.trap && !cogs[i].isLured)
 						{
 							currentCog = i;
 						}
-						else if (!cogs[i].isLured && party[0].gag == gagTypes.lure)
+						else if (!cogs[i].isLured && party[currentToon].gag == gagTypes.lure)
 						{
 							currentCog = i;
 						}
-						else if (party[0].gag == gagTypes.throw_ || party[0].gag == gagTypes.squirt || party[0].gag == gagTypes.drop) 
+						else if (party[currentToon].gag == gagTypes.throw_ || party[currentToon].gag == gagTypes.squirt || party[currentToon].gag == gagTypes.drop) 
 						{
 							currentCog = i;
 						}
@@ -431,7 +444,19 @@ namespace TTBattleSim.Rooms
 						{
 							option.Play();
 
-							attackCogs();
+							party[currentToon].hittingCog = currentCog;
+
+							if (party[currentToon].gag == gagTypes.trap && cogs[party[currentToon].hittingCog].isTrapped) 
+							{
+								party[currentToon].gag = gagTypes.pass;
+							}
+
+							currentToon++;
+							if (currentToon == 4)
+							{
+								currentToon = 0;
+								attackCogs();
+							}
 
 							trackSelecting = true;
 							cogSelecting = false;
@@ -446,7 +471,7 @@ namespace TTBattleSim.Rooms
 
 			if (mouse.collidesWith(exit))
 			{
-				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released)
+				if (currentMousePosition.LeftButton == ButtonState.Pressed && pastMousePosition.LeftButton == ButtonState.Released && isDrawn)
 				{
 					foreach (var screen in ScreenManager.GetScreens())
 						screen.ExitScreen();
@@ -461,39 +486,169 @@ namespace TTBattleSim.Rooms
 			mouse.Y = mousePosition.Y;
 		}
 
-		private void attackCogs() 
+		private void attackCogs()
 		{
-			if (party[0].gag == gagTypes.sound) 
+			int trapNum = 0;
+			int lureNum = 0;
+			int soundNum = 0;
+			int throwNum = 0;
+			int squirtNum = 0;
+			int dropNum = 0;
+			Toon[][] order = new Toon[6][];
+			for (int i = 0; i < 6; i++) 
 			{
+				order[i] = new Toon[4];
+			}
+			for (int k = 0; k < party.Length; k++) 
+			{
+				if (party[k].gag == gagTypes.trap)
+				{
+					order[0][trapNum] = party[k];
+					trapNum++;
+				}
+				else if (party[k].gag == gagTypes.lure)
+				{
+					order[1][lureNum] = party[k];
+					lureNum++;
+				}
+				else if (party[k].gag == gagTypes.sound)
+				{
+					order[2][soundNum] = party[k];
+					soundNum++;
+				}
+				else if (party[k].gag == gagTypes.throw_)
+				{
+					order[3][throwNum] = party[k];
+					throwNum++;
+				}
+				else if (party[k].gag == gagTypes.squirt)
+				{
+					order[4][squirtNum] = party[k];
+					squirtNum++;
+				}
+				else if (party[k].gag == gagTypes.drop)
+				{
+					order[5][dropNum] = party[k];
+					dropNum++;
+				}
+			}
+			for (int i = 0; i < order.Length; i++) {
 				int damage = 0;
-				currentLevel += 1;
-				if (currentLevel == 1)
+				int count = -1;
+				for (int y = 0; y < order[i].Length; y++) 
 				{
-					damage = 4;
-				}
-				else if (currentLevel == 2)
-				{
-					damage = 7;
-				}
-				else if (currentLevel == 3)
-				{
-					damage = 11;
-				}
-				else if (currentLevel == 4)
-				{
-					damage = 16;
-				}
-				else if (currentLevel == 5)
-				{
-					damage = 21;
-				}
-				else 
-				{
-					damage = 50;
-				}
-				for (int i = 0; i < cogs.Length; i++) 
-				{
-					cogs[i].HP -= damage;
+					if (order[i][y] != null) 
+					{
+						if (order[i][y].gag == gagTypes.trap)
+						{
+							int cogNum = order[i][y].hittingCog;
+							if (cogs[cogNum].isTrapped && cogs[cogNum].canNoLongerBeTrapped == false)
+							{
+								cogs[cogNum].canNoLongerBeTrapped = true;
+								cogs[cogNum].isTrapped = false;
+								cogs[cogNum].trapDamage = 0;
+							}
+							else if (cogs[cogNum].isTrapped == false && cogs[cogNum].isLured == false)
+							{
+								cogs[cogNum].isTrapped = true;
+								if (order[i][y].levelGag == 1)
+								{
+									damage = 12;
+								}
+								else if (order[i][y].levelGag == 2)
+								{
+									damage = 20;
+								}
+								else if (order[i][y].levelGag == 3)
+								{
+									damage = 35;
+								}
+								else if (order[i][y].levelGag == 4)
+								{
+									damage = 50;
+								}
+								else if (order[i][y].levelGag == 5)
+								{
+									damage = 70;
+								}
+								else
+								{
+									damage = 180;
+								}
+								cogs[cogNum].trapDamage = damage;
+							}
+						}
+						if (order[i][y].gag == gagTypes.lure) 
+						{
+							if (order[i][y].levelGag % 2 == 0)
+							{
+								for (int x = 0; x < cogs.Length; x++)
+								{
+									cogs[x].isLured = true;
+								}
+							}
+							else 
+							{
+								cogs[order[i][y].hittingCog].isLured = true;
+							}
+
+							for (int x = 0; x < cogs.Length; x++) 
+							{
+								if (cogs[x].isTrapped) 
+								{
+									cogs[x].HP -= cogs[x].trapDamage;
+									cogs[x].isTrapped = false;
+									cogs[x].isLured = false;
+								}
+							}
+						}
+						if (order[i][y].gag == gagTypes.sound)
+						{
+							if (order[i][y].levelGag == 1)
+							{
+								damage += 4;
+								count++;
+							}
+							else if (order[i][y].levelGag == 2)
+							{
+								damage += 7;
+								count++;
+							}
+							else if (order[i][y].levelGag == 3)
+							{
+								damage += 11;
+								count++;
+							}
+							else if (order[i][y].levelGag == 4)
+							{
+								damage += 16;
+								count++;
+							}
+							else if (order[i][y].levelGag == 5)
+							{
+								damage += 21;
+								count++;
+							}
+							else
+							{
+								damage += 50;
+								count++;
+							}
+							if (count >= 1)
+							{
+								int damage2 = damage / 5;
+								damage += damage2;
+							}
+							if (y == count) 
+							{
+								for (int x = 0; x < cogs.Length; x++) 
+								{
+									cogs[x].HP -= damage;
+									cogs[x].isLured = false;
+								}
+							}
+						}
+					}
 				}
 			}
 			for (int i = 0; i < cogs.Length; i++) 
@@ -503,7 +658,9 @@ namespace TTBattleSim.Rooms
 					CogController controller = new((PlayGround)song, currentA);
 					cogs[i] = controller.GenerateCog();
 				}
+				cogs[i].canNoLongerBeTrapped = false;
 			}
+
 		}
 
 		private Rectangle getSourceToonIcons(ToonSpecies species)
@@ -584,7 +741,14 @@ namespace TTBattleSim.Rooms
 				{
 					status = Color.Black;
 				}
-				spriteBatch.DrawString(font, (i+1) + ": " + cogs[i].Name + "\nLevel " + cogs[i].Level + "\nHP: " + cogs[i].HP + "/" + cogs[i].floorHP, new Vector2((graphics.Viewport.Width - 1000 + (1550 * i)) / 4, 50), status, 0f, Vector2.Zero, .45f, SpriteEffects.None, 0);
+				if (cogs[i].isTrapped != true)
+				{
+					spriteBatch.DrawString(font, (i + 1) + ": " + cogs[i].Name + "\nLevel " + cogs[i].Level + "\nHP: " + cogs[i].HP + "/" + cogs[i].floorHP, new Vector2((graphics.Viewport.Width - 1000 + (1550 * i)) / 4, 50), status, 0f, Vector2.Zero, .45f, SpriteEffects.None, 0);
+				}
+				else 
+				{
+					spriteBatch.DrawString(font, (i + 1) + ": " + cogs[i].Name + "\nLevel " + cogs[i].Level + "\nHP: " + cogs[i].HP + "/" + cogs[i].floorHP + "-" + cogs[i].trapDamage, new Vector2((graphics.Viewport.Width - 1000 + (1550 * i)) / 4, 50), status, 0f, Vector2.Zero, .45f, SpriteEffects.None, 0);
+				}
 			}
 
 
@@ -593,7 +757,7 @@ namespace TTBattleSim.Rooms
 				Rectangle iconSource = getSourceToonIcons(party[i].species);
 				spriteBatch.Draw(gags1, new Vector2((graphics.Viewport.Width - 1000 + (1550 * i)) / 4, graphics.Viewport.Height - 200), toonStatsSource, Color.White, 0f, Vector2.Zero, 1.25f, SpriteEffects.None, 0);
 				spriteBatch.Draw(toonIcons, new Vector2((graphics.Viewport.Width - 1300 + (1550 * i)) / 4, graphics.Viewport.Height - 200), iconSource, customColor.customToonColors[(int)party[i].color]);
-				if (toonSelecting[i]) 
+				if (i == currentToon) 
 				{
 					spriteBatch.DrawString(font, "Selecting", new Vector2((graphics.Viewport.Width - 900 + (1550 * i)) / 4, graphics.Viewport.Height - 250), Color.Red, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 				}
@@ -645,27 +809,27 @@ namespace TTBattleSim.Rooms
 				}
 		
 
-							if (party[0].gag == gagTypes.trap)
+							if (party[currentToon].gag == gagTypes.trap)
 							{
 								spriteBatch.DrawString(font, trapDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
-							if (party[0].gag == gagTypes.lure)
+							if (party[currentToon].gag == gagTypes.lure)
 							{
 								spriteBatch.DrawString(font, lureDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
-							if (party[0].gag == gagTypes.sound)
+							if (party[currentToon].gag == gagTypes.sound)
 							{
 								spriteBatch.DrawString(font, soundDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
-							if (party[0].gag == gagTypes.throw_)
+							if (party[currentToon].gag == gagTypes.throw_)
 							{
 								spriteBatch.DrawString(font, throwDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
-							if (party[0].gag == gagTypes.squirt)
+							if (party[currentToon].gag == gagTypes.squirt)
 							{
 								spriteBatch.DrawString(font, squirtDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
-							if (party[0].gag == gagTypes.drop)
+							if (party[currentToon].gag == gagTypes.drop)
 							{
 								spriteBatch.DrawString(font, dropDescriptions[currentLevel], new Vector2((graphics.Viewport.Width - 1450) / 2, (graphics.Viewport.Height - 500) / 2), Color.Black, 0f, Vector2.Zero, .5f, SpriteEffects.None, 0);
 							}
@@ -710,6 +874,8 @@ namespace TTBattleSim.Rooms
 			Rectangle exitButtonSource = new Rectangle(254, 0, 125, 125);
 
 			spriteBatch.Draw(exitButton, Vector2.Zero, exitButtonSource, Color.White);
+
+			isDrawn = true;
 
 			spriteBatch.End();
 

@@ -69,7 +69,9 @@ namespace TTBattleSim.Entities
 
 		public ToonColors color = ToonColors.White;
 
-		public bool[] hittingCog = { false, false , false, false};
+		public int hittingCog;
+
+		public int levelGag;
 
 		public gagTypes gag;
 	}

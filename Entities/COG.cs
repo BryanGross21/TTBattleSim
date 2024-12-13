@@ -29,6 +29,8 @@ namespace TTBattleSim.Entities
 
 		public int trapDamage;
 
+		public bool canNoLongerBeTrapped;
+
 		private CogDepartments _setDepo; //Sets the cogs current department (0 for bossbot, 1 for lawbot, 2 for cashbot, 3 for sellbot)
 		public CogDepartments Depo { get { return _setDepo; } init { _setDepo = value; } }
 
